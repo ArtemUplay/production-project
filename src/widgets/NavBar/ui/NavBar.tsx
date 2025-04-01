@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
 
 import cls from './NavBar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { ThemeSwither } from 'shared/ui/ThemeSwitcher';
 
 export interface NavBarProps {
   className?: string;
@@ -11,6 +11,7 @@ export interface NavBarProps {
 export const NavBar = ({ className }: NavBarProps) => {
   return (
     <div className={classNames(cls.NavBar, {}, [className])}>
+      <ThemeSwither />
       <div className={classNames(cls.links)}>
         <AppLink
           theme={AppLinkTheme.SECONDARY}
