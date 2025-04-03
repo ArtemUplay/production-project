@@ -3,6 +3,7 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 import { NavBar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar/ui';
+import { Suspense } from 'react';
 
 import './styles/index.scss';
 
@@ -11,11 +12,13 @@ export const App = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <NavBar />
-      <div className='content-page'>
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback=''> 
+        <NavBar />
+        <div className='content-page'>
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
