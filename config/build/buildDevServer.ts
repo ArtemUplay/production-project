@@ -5,5 +5,6 @@ export function buildDevServer(options: BuildOptions): DerServerConfiguration {
   return {
     port: options.port,
     historyApiFallback: true,
+    hot: true,
   };
 }
